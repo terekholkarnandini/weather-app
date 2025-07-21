@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #7a4bff, #9f56ff);
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .main-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .container {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 400px;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    #map {
+      height: 400px;
+      min-width: 350px;
+      flex: 1;
+      border-radius: 12px;
+    }
+
+    input, button {
+      padding: 10px;
+      width: 90%;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background: #9f56ff;
+      color: white;
+      cursor: pointer;
+    }
+
+    .weather-icon {
+      width: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .main-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #map {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:start;">WeatherNow</h1>
+
+  <div class="main-wrapper">
+    <div class="container">
+      <input type="text" id="city" placeholder="Enter city name" />
+      <button onclick="fetchWeather()">Get Weather</button>
+      <div id="weather"></div>
+      <div id="forecast"></div>
+    </div>
+    <div id="map"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="weather.js"></script>
+</body>
+</html>
